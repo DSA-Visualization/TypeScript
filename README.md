@@ -1,4 +1,4 @@
-# TypeScript
+# TypeScript Interview Questions
 
 
 ### TypeScript Basics:
