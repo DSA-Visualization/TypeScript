@@ -184,7 +184,7 @@ let strLength: number = (someValue as string).length;
       - Arrow functions cannot be used as constructors and do not have their own `arguments` object. Regular functions do have their own `arguments` object and can be used as constructors with `new`.
 
 
-### TypeScript Classes:
+### [TypeScript Classes:](https://github.com/DSA-Visualization/TypeScript/blob/main/OOPS.md)
 
 22. **How do you define classes in TypeScript?**
     - Classes in TypeScript are defined using the `class` keyword followed by the class name. Inside the class body, you can define properties and methods. Here's an example:
