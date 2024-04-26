@@ -1,4 +1,4 @@
-# OOPS Interview Questions in typescript
+# [OOPS Interview Questions in typescript](https://github.com/DSA-Visualization/TypeScript/blob/main/OOPS-in-typescript.md)
 
 1. **What is Object-Oriented Programming (OOP), and why is it important?**
    - Object-Oriented Programming (OOP) is a programming paradigm that revolves around the concept of objects, which are instances of classes. OOP focuses on organizing code into objects that interact with each other to accomplish tasks. It emphasizes concepts such as encapsulation, inheritance, polymorphism, and abstraction. OOP is important because it offers several benefits, including code reusability, modularity, scalability, and easier maintenance. It also provides a more intuitive way of modeling real-world entities and relationships, making it easier to design and develop complex software systems.
