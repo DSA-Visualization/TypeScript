@@ -1,4 +1,4 @@
-# TypeScript Interview Questions
+# [TypeScript Interview Questions](https://dev.to/rajrathod/series/23839)
 
 
 ### TypeScript Basics:
