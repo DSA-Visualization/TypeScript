@@ -239,7 +239,7 @@ let strLength: number = (someValue as string).length;
 | Access Modifiers         | Can have access modifiers like `public`, `private`, `protected`. | Cannot specify access modifiers.          |
 | Constructor              | Can have constructors.                      | Cannot have constructors.                 |
 | Usage                    | Used when some methods have a default implementation, and subclasses are expected to override others. | Used when defining the structure that classes must adhere to. |
-| Example                  | ```typescript                                class Shape {
+
 
 ```typescript
 abstract class Shape {
