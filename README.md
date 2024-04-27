@@ -66,7 +66,7 @@
    - Interfaces define the structure of objects and are purely abstract, meaning they cannot contain any implementation details. They only define the shape of an object. Classes, on the other hand, can contain both property and method definitions as well as implementation details. Classes are used to create instances (objects) that can be instantiated and used at runtime.
 
 10. **Explain type assertion in TypeScript.**
-    - Type assertion in TypeScript is a way to tell the compiler about the type of a variable when the compiler is unable to infer the type automatically. It allows you to override the default behavior of the type checker. Type assertion can be done using two syntaxes: angle-bracket syntax (`
+    - Type assertion in TypeScript is a way to tell the compiler about the type of a variable when the compiler is unable to check the type automatically. It allows you to override the default behavior of the type checker. Type assertion can be done using two syntaxes: angle-bracket syntax (`
 
 ```typescript
 let someValue: any = "hello";
@@ -229,8 +229,62 @@ let strLength: number = (someValue as string).length;
       ```
 
 26. **Explain the difference between abstract classes and interfaces in TypeScript.**
-    - **Abstract classes:** Abstract classes are classes that cannot be instantiated directly. They can contain abstract methods (methods without a body) that must be implemented by subclasses. Abstract classes can also contain concrete methods and properties. They provide a way to define a common interface for a group of related classes.
-    - **Interfaces:** Interfaces are purely a structural contract that enforces the shape of an object. They cannot contain any implementation details. Classes can implement multiple interfaces, but they cannot extend multiple classes. Interfaces are primarily used for defining contracts between different parts of your code.
+
+| Feature                  | Abstract Classes                            | Interfaces                                 |
+|--------------------------|---------------------------------------------|--------------------------------------------|
+| Definition               | Can have both implemented and abstract methods. | Can only declare method signatures.       |
+| Implementation           | Can provide default implementations for some methods. | Cannot contain any implementation details. |
+| Extending                | Can be extended using the `extends` keyword. | Can be implemented using the `implements` keyword. |
+| Multiple Inheritance    | Cannot extend multiple abstract classes.     | Can be implemented by multiple classes.  |
+| Access Modifiers         | Can have access modifiers like `public`, `private`, `protected`. | Cannot specify access modifiers.          |
+| Constructor              | Can have constructors.                      | Cannot have constructors.                 |
+| Usage                    | Used when some methods have a default implementation, and subclasses are expected to override others. | Used when defining the structure that classes must adhere to. |
+| Example                  | ```typescript                                class Shape {
+
+```typescript
+abstract class Shape {
+  abstract calculateArea(): number;
+  abstract calculatePerimeter(): number;
+  
+  // Default implementation
+  getColor(): string {
+    return "red";
+  }
+}
+
+class Circle extends Shape {
+  constructor(private radius: number) {
+    super();
+  }
+  
+  calculateArea(): number {
+    return Math.PI * this.radius * this.radius;
+  }
+  
+  calculatePerimeter(): number {
+    return 2 * Math.PI * this.radius;
+  }
+}
+```
+
+```typescript
+interface Shape {
+  calculateArea(): number;
+  calculatePerimeter(): number;
+}
+
+class Circle implements Shape {
+  constructor(private radius: number) {}
+  
+  calculateArea(): number {
+    return Math.PI * this.radius * this.radius;
+  }
+  
+  calculatePerimeter(): number {
+    return 2 * Math.PI * this.radius;
+  }
+}
+```
 
 27. **What is a static property in TypeScript?**
     - Static properties in TypeScript belong to the class itself rather than to instances of the class. They are accessed using the class name rather than through an instance of the class. Static properties are declared using the `static` keyword. For example:
