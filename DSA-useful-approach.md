@@ -217,4 +217,27 @@ maxLen(arr, n) {
 }
 ```
 
-Each of these algorithms addresses a specific problem, using appropriate data structures and logic to achieve efficient solutions. The two-pointer technique, sliding window approach, hash maps, and dynamic programming are some of the common strategies employed here.
+### 9. Binary Exponentiation
+
+To efficiently compute \(a^b\) where \(b\) can be very large (up to \(10^{18}\)), we can use an algorithm called **Exponentiation by Squaring** (also known as **Binary Exponentiation**). This method significantly reduces the number of multiplications needed by exploiting the properties of exponents. Here's a step-by-step explanation and implementation in C++:
+
+### Key Ideas
+1. **Even Exponents**:
+   - If \(b\) is even, \(a^b = (a^{b/2})^2\).
+2. **Odd Exponents**:
+   - If \(b\) is odd, \(a^b = a \times (a^{(b-1)/2})^2\).
+
+### Algorithm
+1. Initialize the result as 1.
+2. While \(b\) is greater than 0:
+   - If \(b\) is odd, multiply the result by \(a\).
+   - Square \(a\) and halve \(b\).
+3. The result now contains \(a^b\).
+
+### Complexity
+- Time Complexity: \(O(\log b)\)
+- Space Complexity: \(O(1)\)
+
+
+
+
