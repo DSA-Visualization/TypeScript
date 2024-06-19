@@ -52,29 +52,29 @@ findTriplets(arr, n) {
 }
 ```
 
-### 3. Count Subarrays with Sum Equal to 0
+### 3. Count Subarrays with Sum Equal to k
 
-**Purpose:** To count the number of subarrays that sum to zero.
+**Purpose:** To count the number of subarrays that sum to k.
 
 **Algorithm:**
 - Use a hash map to store the cumulative sum and its frequency.
 - For each element in the array, compute the cumulative sum.
-- If the cumulative sum is zero or it has been seen before, it means there exists a subarray with sum zero.
+- If the cumulative sum is k or it has been seen before, it means there exists a subarray with sum k.
 
 **Code:**
 ```javascript
-findSubarray(arr, n) {
+findSubarray(arr, n, k) {
     let count = 0;
     let h = new Map();
     let sum = 0;
 
     for (let i = 0; i < arr.length; i++) {
         sum += arr[i];
-        if (sum === 0) {
+        if (sum === k) {
             count++;
         }
-        if (h.has(sum)) {
-            count += h.get(sum);
+        if (h.has(sum - k)) {
+            count += h.get(sum - k);
         }
         h.set(sum, (h.get(sum) || 0) + 1);
     }
