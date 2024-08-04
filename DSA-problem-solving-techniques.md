@@ -830,3 +830,27 @@ function addTwoNumbers(l1, l2) {
 ```
 
 These approaches provide a robust framework for solving a wide range of linked list problems. By understanding these techniques, you can tackle most linked list-related challenges efficiently.
+
+    // Function to find the maximum number of meetings that can
+    // be performed in a meeting room.
+    maxMeetings(n, start, end) {
+        let count = 1;
+        let meetings = [];
+    
+        for (let i = 0; i < n; i++) {
+            meetings.push([end[i], start[i]]);
+        }
+    
+        meetings.sort((a, b) => a[0] - b[0]);
+    
+        let last = meetings[0][0];
+    
+        for (let i = 1; i < n; i++) {
+            if (meetings[i][1] > last) {
+                count++;
+                last = meetings[i][0];
+            }
+        }
+    
+        return count; 
+    }
